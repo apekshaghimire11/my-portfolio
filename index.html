@@ -1,241 +1,728 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Apeksha Ghimire | QA Engineer</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apeksha Ghimire - QA Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'qa-primary': '#3b82f6',
+                        'qa-secondary': '#1e40af',
+                        'qa-accent': '#10b981',
+                        'qa-dark': '#1f2937',
+                        'qa-light': '#f3f4f6',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background-color: #10b981;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        .experience-card {
+            border-left: 4px solid #3b82f6;
+        }
+    </style>
 </head>
+<body class="font-inter bg-qa-light text-qa-dark">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-10 h-10 bg-qa-primary rounded-lg flex items-center justify-center">
+                    <span class="text-white font-bold text-xl">QA</span>
+                </div>
+                <h1 class="ml-3 text-xl font-bold text-qa-primary">Apeksha Ghimire</h1>
+            </div>
 
-<body class="bg-gradient-to-br from-slate-50 to-slate-100 text-slate-800">
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#home" class="text-qa-primary font-medium hover:text-qa-accent">Home</a></li>
+                    <li><a href="#about" class="text-gray-600 hover:text-qa-primary">About</a></li>
+                    <li><a href="#skills" class="text-gray-600 hover:text-qa-primary">Skills</a></li>
+                    <li><a href="#experience" class="text-gray-600 hover:text-qa-primary">Experience</a></li>
+                    <li><a href="#tools" class="text-gray-600 hover:text-qa-primary">Tools</a></li>
+                    <li><a href="#contact" class="text-gray-600 hover:text-qa-primary">Contact</a></li>
+                </ul>
+            </nav>
 
-<!-- HEADER -->
-<header class="border-b bg-white">
-  <div class="max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row md:justify-between gap-4">
-    <div>
-      <h1 class="text-2xl font-extrabold tracking-tight">Apeksha Ghimire</h1>
-      <p class="text-sm text-blue-600 font-semibold">
-        QA Engineer · FinTech & Payment Systems
-      </p>
-    </div>
+            <button id="mobile-menu-button" class="md:hidden text-qa-primary">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
 
-    <div class="text-sm space-y-1 md:text-right text-slate-600">
-      <p>📍 Kathmandu, Nepal</p>
-      <p>📞 9861406280</p>
-      <p>
-        ✉️ <a href="mailto:apekshaghimire11@gmail.com"
-              class="text-blue-600 hover:underline">
-              apekshaghimire11@gmail.com
-            </a>
-      </p>
-      <p>
-        🔗 <a href="https://linkedin.com/in/apeksha-ghimire-186739229"
-              target="_blank"
-              class="text-blue-600 hover:underline">
-              LinkedIn
-            </a>
-      </p>
-    </div>
-  </div>
-</header>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t py-4">
+            <ul class="flex flex-col space-y-4 px-4">
+                <li><a href="#home" class="text-qa-primary font-medium">Home</a></li>
+                <li><a href="#about" class="text-gray-600">About</a></li>
+                <li><a href="#skills" class="text-gray-600">Skills</a></li>
+                <li><a href="#experience" class="text-gray-600">Experience</a></li>
+                <li><a href="#tools" class="text-gray-600">Tools</a></li>
+                <li><a href="#contact" class="text-gray-600">Contact</a></li>
+            </ul>
+        </div>
+    </header>
 
-<!-- HERO / SUMMARY -->
-<section class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-10 items-center">
-  <div>
-    <p class="text-blue-600 font-semibold text-sm mb-2">QA Engineer</p>
-    <h2 class="text-3xl md:text-4xl font-extrabold leading-tight">
-      Ensuring reliable, secure,<br class="hidden md:block"/>
-      and high-quality software
-    </h2>
-    <p class="mt-4 text-slate-600">
-      Results-driven QA Engineer with <strong>3+ years</strong> of experience in
-      manual and automation testing, API validation, performance testing,
-      and security testing for high-volume fintech platforms.
-    </p>
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-qa-primary to-qa-secondary text-white py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">QA Engineer</h2>
+                    <p class="text-lg mb-6 text-gray-200">Results-oriented QA engineer with a proven track record in ensuring software quality. Dedicated to identifying and resolving issues to enhance product reliability and user satisfaction.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#experience" class="bg-qa-accent text-white font-medium py-3 px-6 rounded-lg hover:bg-emerald-600">View Experience</a>
+                        <a href="#contact" class="bg-transparent border-2 border-white text-white font-medium py-3 px-6 rounded-lg hover:bg-white hover:text-qa-primary">Contact Me</a>
+                    </div>
 
-    <div class="mt-6 flex gap-3">
-      <a href="mailto:apekshaghimire11@gmail.com"
-         class="px-5 py-2.5 bg-blue-600 text-white rounded-lg text-sm
-                hover:bg-blue-700 transition shadow">
-        Contact Me
-      </a>
-      <a href="https://linkedin.com/in/apeksha-ghimire-186739229"
-         target="_blank"
-         class="px-5 py-2.5 border border-blue-600 text-blue-600 rounded-lg text-sm
-                hover:bg-blue-50 transition">
-        LinkedIn
-      </a>
-    </div>
-  </div>
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span>9861406280</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>apekshaghimire11@gmail.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Kathmandu, Nepal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-gray-300 rounded-full overflow-hidden border-8 border-white shadow-2xl">
+                            <!-- QA Engineer Image Placeholder -->
+                            <div class="w-full h-full bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center">
+                                <i class="fas fa-bug text-white text-8xl"></i>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-qa-accent text-white py-2 px-6 rounded-lg shadow-lg">
+                            <p class="font-bold">Manual & Automation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- STATS -->
-  <div class="grid grid-cols-2 gap-4">
-    <div class="bg-white p-5 rounded-xl shadow text-center hover:shadow-md transition">
-      <p class="text-3xl font-bold text-blue-600">3+</p>
-      <p class="text-xs text-slate-500 mt-1">Years Experience</p>
-    </div>
-    <div class="bg-white p-5 rounded-xl shadow text-center hover:shadow-md transition">
-      <p class="text-3xl font-bold text-blue-600">FinTech</p>
-      <p class="text-xs text-slate-500 mt-1">Domain Expertise</p>
-    </div>
-    <div class="bg-white p-5 rounded-xl shadow text-center hover:shadow-md transition">
-      <p class="text-3xl font-bold text-blue-600">Automation</p>
-      <p class="text-xs text-slate-500 mt-1">Playwright </p>
-    </div>
-    <div class="bg-white p-5 rounded-xl shadow text-center hover:shadow-md transition">
-      <p class="text-3xl font-bold text-blue-600">API</p>
-      <p class="text-xs text-slate-500 mt-1">Postman & SQL</p>
-    </div>
-  </div>
-</section>
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 section-title">About Me</h2>
 
-<!-- WHAT I DO -->
-<section class="bg-white py-14">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-2xl font-bold text-center mb-8">What I Do</h2>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-2/3">
+                    <p class="text-lg mb-6">I am a dedicated QA Engineer with expertise in both manual and automated testing. My experience spans across functional, non-functional, API, performance, and security testing. I'm passionate about delivering high-quality software solutions that enhance user satisfaction and product reliability.</p>
 
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="p-6 rounded-xl shadow bg-slate-50 hover:shadow-md transition">
-        <h3 class="font-semibold mb-2">Manual & Functional Testing</h3>
-        <p class="text-sm text-slate-600">
-          Verifying workflows, business logic, usability, and edge cases.
-        </p>
-      </div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-4 text-qa-primary">Core Philosophy</h3>
+                        <p class="text-lg">I believe that quality assurance is not just about finding bugs but about ensuring that software meets both functional requirements and user expectations. My approach combines thorough manual testing with strategic automation to maximize efficiency and coverage.</p>
+                    </div>
 
-      <div class="p-6 rounded-xl shadow bg-slate-50 hover:shadow-md transition">
-        <h3 class="font-semibold mb-2">Automation Testing</h3>
-        <p class="text-sm text-slate-600">
-          Building scalable regression suites using Playwright.
-        </p>
-      </div>
+                    <div class="bg-qa-light p-6 rounded-xl">
+                        <h3 class="text-xl font-bold mb-4 text-qa-primary">Education</h3>
+                        <div class="flex items-start">
+                            <div class="bg-qa-primary text-white p-3 rounded-lg mr-4">
+                                <i class="fas fa-graduation-cap text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Bachelor of Science in CSIT</h4>
+                                <p class="text-gray-600">Tribhuvan University</p>
+                                <p class="text-gray-500">2017 – 2021 | Kathmandu, Nepal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-      <div class="p-6 rounded-xl shadow bg-slate-50 hover:shadow-md transition">
-        <h3 class="font-semibold mb-2">API, Security & Performance</h3>
-        <p class="text-sm text-slate-600">
-          API validation, load testing, and identifying security vulnerabilities.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+                <div class="md:w-1/3">
+                    <div class="bg-gradient-to-br from-qa-primary to-qa-secondary text-white p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold mb-4">Quick Facts</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-qa-accent mr-3 mt-1"></i>
+                                <span>Expertise in both manual and automation testing</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-qa-accent mr-3 mt-1"></i>
+                                <span>Proficient in API testing with Postman</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-qa-accent mr-3 mt-1"></i>
+                                <span>Experience with security testing using Burp Suite</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-qa-accent mr-3 mt-1"></i>
+                                <span>Skilled in performance testing with JMeter</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-qa-accent mr-3 mt-1"></i>
+                                <span>Strong knowledge of SQL for database testing</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- EXPERIENCE -->
-<section class="py-16">
-  <div class="max-w-5xl mx-auto px-6">
-    <h2 class="text-2xl font-bold text-center mb-10">Experience</h2>
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-qa-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 section-title">Technical Skills</h2>
 
-    <div class="relative border-l-2 border-blue-600 pl-6 space-y-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Core Competencies -->
+                <div class="bg-white p-6 rounded-xl shadow-md skill-card">
+                    <div class="w-12 h-12 bg-qa-primary text-white rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-cogs text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-qa-primary">Core Competencies</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                            <span>Manual Testing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                            <span>Automation Testing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                            <span>API Testing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                            <span>Performance Testing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                            <span>Security Testing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                            <span>Regression Testing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                            <span>UI/UX Testing</span>
+                        </li>
+                    </ul>
+                </div>
 
-      <!-- Fonepay -->
-      <div>
-        <span class="absolute -left-[7px] w-3 h-3 bg-blue-600 rounded-full mt-1"></span>
-        <h3 class="font-semibold">Associate QA Engineer – Fonepay Payment Service Limited</h3>
-        <p class="text-xs text-slate-500">Jul 2023 – Present · Lalitpur</p>
-        <ul class="mt-3 list-disc list-inside text-sm text-slate-600 space-y-1">
-          <li>Performed extensive manual testing of fintech payment systems.</li>
-          <li>Automated regression testing using <strong>Playwright</strong>.</li>
-          <li>Executed API tests with <strong>Postman</strong>.</li>
-          <li>Conducted load testing using <strong>JMeter</strong>.</li>
-          <li>Identified security vulnerabilities using <strong>Burp Suite</strong>.</li>
-          <li>Verified transactions and settlement logic using <strong>SQLyog</strong>.</li>
-          <li>Tracked and managed defects using <strong>JIRA</strong>.</li>
-        </ul>
-      </div>
+                <!-- Platforms -->
+                <div class="bg-white p-6 rounded-xl shadow-md skill-card">
+                    <div class="w-12 h-12 bg-qa-primary text-white rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-desktop text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-qa-primary">Platforms</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                            <span>Cross-Browser Testing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                            <span>Mobile App Testing (Android and iOS)</span>
+                        </li>
+                    </ul>
 
-      <!-- New IT Venture -->
-      <div>
-        <span class="absolute -left-[7px] w-3 h-3 bg-blue-600 rounded-full mt-1"></span>
-        <h3 class="font-semibold">QA Engineer – New IT Venture</h3>
-        <p class="text-xs text-slate-500">Jun 2022 – Jun 2023 · Kathmandu</p>
-        <ul class="mt-3 list-disc list-inside text-sm text-slate-600 space-y-1">
-          <li>Designed and executed comprehensive test cases.</li>
-          <li>Improved testing efficiency using <strong>Playwright</strong>.</li>
-          <li>Performed API testing with <strong>Postman</strong>.</li>
-          <li>Collaborated with developers to resolve defects.</li>
-        </ul>
-      </div>
+                    <h4 class="font-bold mt-6 mb-3 text-qa-dark">Test Types</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                            <span>Functional Testing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                            <span>Non-Functional Testing</span>
+                        </li>
+                    </ul>
+                </div>
 
-      <!-- Freelancer -->
-      <div>
-        <span class="absolute -left-[7px] w-3 h-3 bg-blue-600 rounded-full mt-1"></span>
-        <h3 class="font-semibold">QA Freelancer – Leafnode Technology</h3>
-        <p class="text-xs text-slate-500">Jun 2022 – Aug 2022 · Remote</p>
-        <ul class="mt-3 list-disc list-inside text-sm text-slate-600 space-y-1">
-          <li>Tested applications for functionality, usability, and performance.</li>
-          <li>Prepared detailed defect reports for developers.</li>
-          <li>Communicated findings directly with clients.</li>
-        </ul>
-      </div>
+                <!-- Testing Methodologies -->
+                <div class="bg-white p-6 rounded-xl shadow-md skill-card">
+                    <div class="w-12 h-12 bg-qa-primary text-white rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-clipboard-check text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-qa-primary">Testing Methodologies</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                            <span>Test Case Design & Execution</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                            <span>Defect Tracking & Management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                            <span>Test Documentation & Reporting</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                            <span>Requirement Analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                            <span>Release Readiness Reviews</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                            <span>Regression Testing Cycles</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                            <span>Post-Deployment Validation</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <!-- Intern -->
-      <div>
-        <span class="absolute -left-[7px] w-3 h-3 bg-blue-600 rounded-full mt-1"></span>
-        <h3 class="font-semibold">QA Intern – WebPoint Solutions</h3>
-        <p class="text-xs text-slate-500">Feb 2022 – May 2022 · Lalitpur</p>
-        <ul class="mt-3 list-disc list-inside text-sm text-slate-600 space-y-1">
-          <li>Created test cases and defect reports.</li>
-          <li>Collaborated closely with developers.</li>
-          <li>Improved QA–Dev communication.</li>
-        </ul>
-      </div>
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 section-title">Professional Experience</h2>
 
-    </div>
-  </div>
-</section>
+            <div class="space-y-10">
+                <!-- Experience 1 -->
+                <div class="experience-card bg-qa-light p-6 rounded-xl shadow-md">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                        <div>
+                            <h3 class="text-xl font-bold text-qa-primary">Associate QA Engineer</h3>
+                            <p class="text-lg font-medium text-gray-700">Fonepay Payment Service Limited</p>
+                        </div>
+                        <div class="mt-2 md:mt-0">
+                            <span class="bg-qa-primary text-white py-1 px-3 rounded-lg text-sm">Jul 2023 – Present</span>
+                            <p class="text-gray-600 mt-1">Pulchowk, Lalitpur</p>
+                        </div>
+                    </div>
 
-<!-- TOOLS -->
-<section class="bg-white py-14">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-2xl md:text-3xl font-bold mb-10 text-gray-800">
-      Tools & Technologies
-    </h2>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold mb-2 text-qa-dark">Key Responsibilities:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                    <span>Performed extensive manual testing to verify system behavior, usability, and user flows</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                    <span>Designed and executed structured test cases to validate functional and non-functional requirements</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                    <span>Conducted automation testing using Playwright to streamline regression and repetitive test scenarios</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                    <span>Performed load testing with JMeter to evaluate system scalability and responsiveness</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                    <span>Identified and validated security vulnerabilities such as amount tampering using Burp Suite</span>
+                                </li>
+                            </ul>
+                        </div>
 
-    <div class="flex flex-wrap justify-center gap-4 text-sm">
+                        <div>
+                            <h4 class="font-bold mb-2 text-qa-dark">Additional Contributions:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                    <span>Executed API tests using Postman to ensure accurate backend processing and integration</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                    <span>Queried and verified transactional data using SQLyog to ensure database integrity</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                    <span>Analyzed system logs and API responses to investigate and resolve critical issues</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                    <span>Verified charge calculations and settlement logic to maintain financial accuracy</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                    <span>Reported and tracked defects using JIRA, ensuring thorough follow-up and timely resolution</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-      <span class="flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-full hover:scale-105 transition">
-        <i class="fa-solid fa-play"></i> Playwright
-      </span>
+                <!-- Experience 2 -->
+                <div class="experience-card bg-qa-light p-6 rounded-xl shadow-md">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                        <div>
+                            <h3 class="text-xl font-bold text-qa-primary">QA Engineer</h3>
+                            <p class="text-lg font-medium text-gray-700">New IT Venture</p>
+                        </div>
+                        <div class="mt-2 md:mt-0">
+                            <span class="bg-qa-primary text-white py-1 px-3 rounded-lg text-sm">Jun 2022 – Jun 2023</span>
+                            <p class="text-gray-600 mt-1">Basbari, Kathmandu</p>
+                        </div>
+                    </div>
 
-      <span class="flex items-center gap-2 px-4 py-2 bg-green-100 text-green-700 rounded-full hover:scale-105 transition">
-        <i class="fa-solid fa-robot"></i> Robot Framework
-      </span>
+                    <div class="mt-6">
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                <span>Developed and executed test cases for thorough software coverage</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                <span>Streamlined defect management using JIRA and collaborated with developers</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                <span>Enhanced testing efficiency through Cypress automation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                <span>Ensured API reliability with Postman testing</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                <span>Improved customer satisfaction by validating user requirements</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-      <span class="flex items-center gap-2 px-4 py-2 bg-orange-100 text-orange-700 rounded-full hover:scale-105 transition">
-        <i class="fa-solid fa-paper-plane"></i> Postman
-      </span>
+                <!-- Experience 3 -->
+                <div class="experience-card bg-qa-light p-6 rounded-xl shadow-md">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                        <div>
+                            <h3 class="text-xl font-bold text-qa-primary">QA Freelancer</h3>
+                            <p class="text-lg font-medium text-gray-700">Leafnode Technology</p>
+                        </div>
+                        <div class="mt-2 md:mt-0">
+                            <span class="bg-qa-primary text-white py-1 px-3 rounded-lg text-sm">Jun 2022 – Aug 2022</span>
+                            <p class="text-gray-600 mt-1">Remote</p>
+                        </div>
+                    </div>
 
-      <span class="flex items-center gap-2 px-4 py-2 bg-red-100 text-red-700 rounded-full hover:scale-105 transition">
-        <i class="fa-solid fa-gauge-high"></i> JMeter
-      </span>
+                    <div class="mt-6">
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                <span>Conducted thorough testing of applications and systems to identify bugs and ensure functionality, usability, and performance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                <span>Created detailed defect reports to assist developers in resolving issues efficiently</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                <span>Generated and executed test cases based on project requirements</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                <span>Provided regular updates and communicated findings to clients</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                <span>Adapted to evolving project requirements and contributed to a dynamic workflow</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-      <span class="flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-700 rounded-full hover:scale-105 transition">
-        <i class="fa-solid fa-shield-halved"></i> Burp Suite
-      </span>
+                <!-- Experience 4 -->
+                <div class="experience-card bg-qa-light p-6 rounded-xl shadow-md">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                        <div>
+                            <h3 class="text-xl font-bold text-qa-primary">QA Intern</h3>
+                            <p class="text-lg font-medium text-gray-700">WebPoint Solutions</p>
+                        </div>
+                        <div class="mt-2 md:mt-0">
+                            <span class="bg-qa-primary text-white py-1 px-3 rounded-lg text-sm">Feb 2022 – May 2022</span>
+                            <p class="text-gray-600 mt-1">Sanepa, Lalitpur</p>
+                        </div>
+                    </div>
 
-      <span class="flex items-center gap-2 px-4 py-2 bg-sky-100 text-sky-700 rounded-full hover:scale-105 transition">
-        <i class="fa-solid fa-database"></i> SQL
-      </span>
+                    <div class="mt-6">
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                <span>Gained a solid understanding of the system and created mindmaps to clarify information</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                <span>Developed and documented test cases, recorded in spreadsheets for tracking</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                <span>Prepared defect reports and collaborated with developers for effective fixes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-qa-accent mt-1 mr-2"></i>
+                                <span>Improved communication between the QA and development teams</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <span class="flex items-center gap-2 px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full hover:scale-105 transition">
-        <i class="fa-brands fa-jira"></i> JIRA
-      </span>
+    <!-- Tools Section -->
+    <section id="tools" class="py-16 bg-qa-light">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 section-title">Tools & Technologies</h2>
 
-      <span class="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-full hover:scale-105 transition">
-        <i class="fa-brands fa-github"></i> GitHub
-      </span>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Tool 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-lg flex items-center justify-center mb-4">
+                        <i class="fab fa-playwright text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg">Playwright</h4>
+                    <p class="text-gray-600 text-center mt-1">Automation Testing</p>
+                </div>
 
-    </div>
-  </div>
-</section>
+                <!-- Tool 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-700 text-white rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-paper-plane text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg">Postman</h4>
+                    <p class="text-gray-600 text-center mt-1">API Testing</p>
+                </div>
 
+                <!-- Tool 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 text-white rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-tachometer-alt text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg">JMeter</h4>
+                    <p class="text-gray-600 text-center mt-1">Performance Testing</p>
+                </div>
 
-<!-- FOOTER -->
-<footer class="py-6 text-center text-xs text-slate-500">
-  © 2025 Apeksha Ghimire · QA Engineer
-</footer>
+                <!-- Tool 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 text-white rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg">Burp Suite</h4>
+                    <p class="text-gray-600 text-center mt-1">Security Testing</p>
+                </div>
 
+                <!-- Tool 5 -->
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 text-white rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-database text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg">SQLyog</h4>
+                    <p class="text-gray-600 text-center mt-1">Database Testing</p>
+                </div>
+
+                <!-- Tool 6 -->
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white rounded-lg flex items-center justify-center mb-4">
+                        <i class="fab fa-jira text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg">JIRA</h4>
+                    <p class="text-gray-600 text-center mt-1">Defect Tracking</p>
+                </div>
+
+                <!-- Tool 7 -->
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-900 text-white rounded-lg flex items-center justify-center mb-4">
+                        <i class="fab fa-github text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg">Git & GitHub</h4>
+                    <p class="text-gray-600 text-center mt-1">Version Control</p>
+                </div>
+
+                <!-- Tool 8 -->
+                <div class="bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 text-white rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-code text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold text-lg">VS Code</h4>
+                    <p class="text-gray-600 text-center mt-1">Development</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 section-title">Get In Touch</h2>
+
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-bold mb-6 text-qa-primary">Contact Information</h3>
+                    <p class="text-lg mb-8">I'm available for QA engineer positions, freelance projects, or consulting opportunities. Feel free to reach out for any quality assurance inquiries.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-qa-primary text-white p-3 rounded-lg mr-4">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Email</h4>
+                                <p class="text-gray-600">apekshaghimire11@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-qa-primary text-white p-3 rounded-lg mr-4">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Phone</h4>
+                                <p class="text-gray-600">+977 9861406280</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-qa-primary text-white p-3 rounded-lg mr-4">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Location</h4>
+                                <p class="text-gray-600">Kathmandu, Nepal</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-qa-primary text-white p-3 rounded-lg mr-4">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">LinkedIn</h4>
+                                <p class="text-gray-600">linkedin.com/in/apeksha-ghimire-186739229</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2">
+                    <form class="bg-qa-light p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-6 text-qa-primary">Send a Message</h3>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2" for="name">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-qa-primary" placeholder="Your Name">
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2" for="email">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-qa-primary" placeholder="your.email@example.com">
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2" for="subject">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-qa-primary" placeholder="QA Opportunity">
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2" for="message">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-qa-primary" placeholder="Your message here..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-qa-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-qa-secondary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-qa-dark text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-qa-accent text-qa-dark rounded-lg flex items-center justify-center">
+                            <span class="font-bold text-xl">QA</span>
+                        </div>
+                        <h2 class="ml-3 text-xl font-bold">Apeksha Ghimire</h2>
+                    </div>
+                    <p class="mt-2 text-gray-300">QA Engineer | Manual & Automation Testing Specialist</p>
+                </div>
+
+                <div class="flex space-x-6">
+                    <a href="https://linkedin.com/in/apeksha-ghimire-186739229" target="_blank" class="text-white hover:text-qa-accent text-xl">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:apekshaghimire11@gmail.com" class="text-white hover:text-qa-accent text-xl">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+9779861406280" class="text-white hover:text-qa-accent text-xl">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-300">
+                <p>&copy; 2023 Apeksha Ghimire. All rights reserved.</p>
+                <p class="mt-2 text-sm">Results-oriented QA engineer dedicated to enhancing product reliability and user satisfaction</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form submission (basic)
+        const contactForm = document.querySelector('form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! This is a demo form. In a real application, this would send your message.');
+            contactForm.reset();
+        });
+    </script>
 </body>
 </html>
